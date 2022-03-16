@@ -78,6 +78,11 @@ In this tutorial, we are going to see an easy to integrate InTouch Live location
 
 </html>
 ```
+### Intouch Live Tracking sample Widget Image
+        
+![Live Tracking widget](https://user-images.githubusercontent.com/59359484/158617366-5e814961-0a7a-44e4-bf2b-981af94fc92d.png)
+
+        
 For any queries and support, please contact: 
 
 [<img src="https://www.mapmyindia.com/images/logo.png" height="40"/> </p>](https://www.mapmyindia.com/api)
