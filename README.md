@@ -1,63 +1,83 @@
 # mapmyindia-intouch-web-plugins
 
 ## InTouch Live Location Tracking Widget
-Easy to integrate InTouch Live location Tracking widget by MapmyIndia. Using this widget you will be able to view the vehicles live locaiton on Map.
+In this tutorial, we are going to see an easy to integrate InTouch Live location Tracking widget powered by Mappls from MapmyIndia. Using this widget, you will be able to view the vehicles live locaiton on Map.
 
 ### 3 Step process to integrate InTouch Live location tracking widget in any Web App
 
 1. #### Step 1
+    Inside the <head> section of HTML of web page, or wherever else you find more suitable, include the following MapmyIndia javascript code.
+    ```html
+    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v1.0/intouch-sdk.js"></script>
+    ```
+2. #### Step 2
     Inside the <body> section of HTML of web page, define a div into which the InTouch Live location Tracking widget from MapmyIndia needs to be loaded.
     ```html
      <div id="mapdiv"></div>
     ```
 
-2. #### Step 2
-    Inside the <head> section of HTML of web page, or wherever else you find more suitable, include the following MapmyIndia javascript code.
-    ```html
-    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v1.0/intouch-sdk.js"></script>
-    ```
 3. #### Step 3 
-    To load up the InTouch live location Tracking widget from MapmyIndia, call the following javascript code **AFTER** the Intouch live location Tracking javascript file (as defined in step 2) has loaded.
+    To load up the InTouch live location Tracking widget from MapmyIndia, call the following javascript code **AFTER** the Intouch live location Tracking javascript file (as defined in step 1) has loaded.
     ```js
-    var intouchObj = {};  
-    //intouchObj.customIconUrl = "";
-    intouchObj.iconType = 'car'; // Allowed types are "bike", "car", "bus", "truck", "men".
-    intouchObj.mapKey = "Enter the Map Access Token"; // Use the Map API Rest key
-    intouchObj.deviceId ={Device Id}; // Enter the Device Id for which you want to see the Tracking. 
-    intouchObj.access_token = "Enter the oAuth Token without Bearer word"; // While adding the token Don't use Bearer word, since it is being internally added.
-    intouchObj.bindPopUp = true;
+    <script type="text/javascript" defer=defer>
     var intouchSdk = new IntouchSdk();
-    intouchSdk.trackDevice(mapdiv, intouchObj);
-    ```
-    That’s it - all done!
+    function deviceDataCallback(data) {
+        console.log(data);
+    }
+
+    function updateToken() {
+        console.log("tokenUpdated");
+        intouchSdk.updateAccessToken("<Enter the oAuth Token without Bearer word>"); // While adding the token Don't use Bearer word, since it is being internally added.
+    }
+
+    intouchSdk.initialize(mapdiv, "<Enter the Map Access Token>", "<Enter the oAuth Token without Bearer word>", updateToken); // For Map access token Use the Map API Rest key
+
+    var deviceObj = {};
+    // deviceObj.customIconUrl = "";
+    deviceObj.iconType = 'car';// Allowed types are "bike", "car", "bus", "truck", "men".
+    deviceObj.deviceId = {Device Id}; // Enter the Device Id for which you want to see the Tracking. 
+    deviceObj.bindPopUp = true;
+    intouchSdk.trackDevice(deviceObj, deviceDataCallback);
+    </script>
+
+#### That’s it - all done!
 
 ## Sample Code
+        
 ```html
+        
 <html>
 <head>
-  <script src="https://cdn.mapmyindia.com/Intouch/sdk/v1.0/intouch-sdk.js"></script>
+    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v1.0/intouch-sdk.js"></script>
 </head>
 
 <body>
-  <div id="mapdiv"></div>
+    <div id="mapdiv"></div>
 </body>
-<script type="text/javascript" defer=defer>
-  var intouchObj = {};  
-  // intouchObj.customIconUrl = "";
-  intouchObj.iconType = 'bus';
-  intouchObj.mapKey = "9a5cf885c506836aca535c22c98fa23";
-  intouchObj.deviceId = 323123;
-  intouchObj.access_token = "6ed72323a62-93a6-4437-bb9e-56";
-  intouchObj.bindPopUp = true;
-  var intouchSdk = new IntouchSdk();
-  intouchSdk.trackDevice(mapdiv, intouchObj);
 
+<script type="text/javascript" defer=defer>
+    var intouchSdk = new IntouchSdk();
+    function deviceDataCallback(data) {
+        console.log(data);
+    }
+
+    function updateToken() {
+        console.log("tokenUpdated");
+        intouchSdk.updateAccessToken("8e5600e8-83c2-4f2e-b62c-a0a0e143a33c");
+    }
+
+    intouchSdk.initialize(mapdiv, "ac1101c6108f88d0e685f2d31f7b301e", "8e5600e8-83c2-4f2e-b62c-a0a0e143a33c", updateToken);
+
+    var deviceObj = {};
+    // deviceObj.customIconUrl = "";
+    deviceObj.iconType = 'car';
+    deviceObj.deviceId = 1002537;
+    deviceObj.bindPopUp = true;
+    intouchSdk.trackDevice(deviceObj, deviceDataCallback);
 </script>
 
 </html>
 ```
-
-
 For any queries and support, please contact: 
 
 [<img src="https://www.mapmyindia.com/images/logo.png" height="40"/> </p>](https://www.mapmyindia.com/api)
