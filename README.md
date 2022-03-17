@@ -63,10 +63,10 @@ In this tutorial, we are going to see an easy to integrate InTouch Live location
 
     function updateToken() {
         console.log("tokenUpdated");
-        intouchSdk.updateAccessToken("8e5600e8-83c2-4f2e-b62c-a0a0e143a33c");
+        intouchSdk.updateAccessToken("token-generated-from-CI-and-CS");
     }
 
-    intouchSdk.initialize(mapdiv, "ac1101c6108f88d0e685f2d31f7b301e", "8e5600e8-83c2-4f2e-b62c-a0a0e143a33c", updateToken);
+    intouchSdk.initialize(mapdiv, "provided-map-api-key-here", "token-generated-from-CI-and-CS", updateToken);
 
     var deviceObj = {};
     // deviceObj.customIconUrl = "";
