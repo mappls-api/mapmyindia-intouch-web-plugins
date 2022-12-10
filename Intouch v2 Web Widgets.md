@@ -3,9 +3,9 @@
 
 # Table of Contents
 1. [Intouch Device Location Tracking Widget](#1-intouch-live-location-tracking-widget)
-2. [Intouch Job Tracking Visualization Widget](2-intouch-job-tracking-visualization-widget)
+2. [Intouch Job Tracking Visualization Widget](#2-intouch-job-tracking-visualization-widget)
 
-## 1. [InTouch Live Location Tracking Widget](#intouch-live-location-tracking-widget)
+## 1. [InTouch Live Location Tracking Widget](#1-intouch-live-location-tracking-widget)
 In this tutorial, we are going to see an easy to integrate InTouch Live location Tracking widget powered by Mappls from MapmyIndia. Using this widget, you will be able to view the vehicles live location on Map.
 
 ### `3 Step process to integrate InTouch Live location tracking widget in any Web App`
