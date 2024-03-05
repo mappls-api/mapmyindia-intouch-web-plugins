@@ -13,7 +13,7 @@ In this tutorial, we are going to see an easy to integrate InTouch Live location
 1. #### Step 1
     Inside the <head> section of HTML of web page, or wherever else you find more suitable, include the following MapmyIndia javascript code.
     ```html
-    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.0/intouch-sdk.js"></script>
+    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.1.3/intouch-sdk.js"></script>
     ```
 2. #### Step 2
     Inside the <body> section of HTML of web page, define a div into which the InTouch Live location Tracking widget from MapmyIndia needs to be loaded.
@@ -62,7 +62,7 @@ In this tutorial, we are going to see an easy to integrate InTouch Job tracking 
 1. #### Step 1
     Inside the <head> section of HTML of web page, or wherever else you find more suitable, include the following MapmyIndia javascript code.
     ```html
-    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.0/intouch-sdk.js"></script>
+    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.1.3/intouch-sdk.js"></script>
     ```
 2. #### Step 2
     Inside the <body> section of HTML of web page, define a div into which the InTouch Live location Tracking widget from MapmyIndia needs to be loaded.
@@ -159,7 +159,7 @@ In this tutorial, we are going to see an easy to integrate InTouch Job tracking 
 ```html
 <html>
 <head>
-    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.0/intouch-sdk.js"></script>
+    <script src="https://cdn.mapmyindia.com/Intouch/sdk/v2.1.3/intouch-sdk.js"></script>
 
     <script type="text/javascript" defer=defer>
         var intouchSdk = new IntouchSdk();
